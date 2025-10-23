@@ -1,0 +1,29 @@
+[versions]
+agp = "8.12.3"
+kotlin = "2.2.21"
+coreKtx = "1.17.0"
+desugar = "2.1.5"
+appcompat = "1.7.1"
+material = "1.13.0"
+activity = "1.11.0"
+constraintlayout = "2.2.1"
+jaxb = "4.0.4"
+stax = "1.0-2"
+glassfish = "4.0.6"
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+desugar = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "desugar" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+jaxb-core = { group = "org.glassfish.jaxb", name = "jaxb-core", version.ref = "glassfish" }
+jaxb-runtime = { group = "org.glassfish.jaxb", name = "jaxb-runtime", version.ref = "glassfish" }
+jaxb-bind = { group = "jakarta.xml.bind", name = "jakarta.xml.bind-api", version.ref = "jaxb" }
+stax = { group = "javax.xml.stream", name = "stax-api", version.ref = "stax" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+

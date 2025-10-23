@@ -1,0 +1,57 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+}
+
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
+android {
+    namespace = 'com.example.examplejaxb'
+    compileSdk = 36
+
+    defaultConfig {
+        applicationId = "com.example.examplejaxb"
+        minSdk = 24
+        targetSdk = 36
+        versionCode = 1
+        versionName = "1.0"
+        multiDexEnabled = true
+    }
+
+    packaging {
+        excludes += [ "META-INF/NOTICE.md", "META-INF/LICENSE.md" ]
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled = false
+            proguardFiles += [ getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro' ]
+        }
+    }
+    compileOptions {
+        coreLibraryDesugaringEnabled = true
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+    /*kotlin {
+        compileOptions {
+            jvmTarget = JvmTarget.JVM_11
+        }
+    }*/
+    kotlinOptions {
+        jvmTarget = "11"
+    }
+}
+
+dependencies {
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation libs.androidx.activity
+    implementation libs.androidx.constraintlayout
+    implementation libs.stax
+    implementation libs.jaxb.core
+    implementation libs.jaxb.runtime
+    implementation libs.jaxb.bind
+    coreLibraryDesugaring libs.desugar
+}

@@ -15,6 +15,7 @@ class Book {
         this.publisher = publisher
         this.isbn = isbn
     }
+    constructor() {}
 
     // If you like the variable name, e.g., "name", you can easily change this
     // name for your XML-Output:

@@ -19,7 +19,9 @@ android {
     }
 
     packaging {
-        excludes += [ "META-INF/NOTICE.md", "META-INF/LICENSE.md" ]
+        resources {
+            excludes += "META-INF/*"
+        }
     }
 
     buildTypes {
@@ -54,4 +56,6 @@ dependencies {
     implementation libs.jaxb.runtime
     implementation libs.jaxb.bind
     coreLibraryDesugaring libs.desugar
+    annotationProcessor libs.jaxb.bind
+    //annotationProcessor libs.jakarta.annotations
 }
